@@ -1,0 +1,10 @@
+Qt 6.8.2 (qtbase) for tOS
+========================
+
+Built from qtbase-everywhere-src-6.8.2.tar.xz (beside this package), unmodified, with the gcc package's compiler (so that it runs on tOS's C++ library): configure -prefix /system/pkg/qt6-base -release -xcb -xkbcommon -fontconfig -system-freetype -no-opengl -no-dbus -no-icu -no-glib -no-openssl -no-cups -no-sql-sqlite -qt-pcre -qt-harfbuzz -qt-libpng -qt-libjpeg -qt-zlib, with udev and KMS/DRM turned off (tOS has neither). Modules: Core, Gui, Widgets, Network, Xml, Sql, Concurrent, PrintSupport. Platform plugins: xcb (talks to the X server of the xorg package: tos-x), linuxfb (draws in /dev/fb0), offscreen, minimal, vnc. Text is drawn with the fontconfig and fonts-dejavu packages.
+
+Changes to the installed files: the CMake and .prl files name libQt6X.so.6 where the build named libQt6X.so.6.8.2 (a library is one file under its soname; libQt6X.so is a linker script that points at it), and every library and plugin has /system/pkg/xcb-libs/lib in its RUNPATH.
+
+To build a program: qmake, or cmake with -DCMAKE_PREFIX_PATH=/system/pkg/qt6-base, or g++ with -I/system/pkg/qt6-base/include/QtCore ... -lQt6Widgets -lQt6Gui -lQt6Core; moc, uic and rcc are on the PATH.
+
+Licenses: Qt is under the LGPL-3.0 (LICENSE; with the GPL-2.0 and GPL-3.0 as alternatives: LICENSE.GPL2, LICENSE.GPL3, LICENSE.Qt-GPL-exception) or a commercial license. Qt is linked dynamically so that you can replace it with your own build. It bundles code under the licenses in 3rdparty-*: harfbuzz (MIT), libpng, libjpeg (IJG, BSD, Zlib), PCRE2 (BSD-2 with exception), zlib, double-conversion (BSD-3), md4c (MIT), tinycbor (MIT), pixman parts and others; Qt's own list is in the source tarball (src/3rdparty/*/qt_attribution.json).
