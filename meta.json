@@ -1,0 +1,51 @@
+{
+ "name": "qt6-base",
+ "version": "6.8.2-2",
+ "license": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only (Qt), with bundled MIT, BSD, Zlib, libpng, IJG licensed parts",
+ "homepage": "https://www.qt.io",
+ "licenses": [
+  "3rdparty-BSD-2-Clause",
+  "3rdparty-BSD-3-Clause",
+  "3rdparty-CC0-1.0",
+  "3rdparty-IJG",
+  "3rdparty-LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception",
+  "3rdparty-MIT",
+  "3rdparty-Unicode-3.0",
+  "3rdparty-X11",
+  "3rdparty-Zlib",
+  "3rdparty-blessing",
+  "3rdparty-libpng-2.0",
+  "LICENSE",
+  "LICENSE.GPL2",
+  "LICENSE.GPL3",
+  "LICENSE.Qt-GPL-exception",
+  "NOTICE.txt"
+ ],
+ "sources": [
+  "qtbase-everywhere-src-6.8.2.tar.xz"
+ ],
+ "desc": "Qt 6.8.2 base: Core, Gui, Widgets, Network, Xml, Sql, Concurrent, PrintSupport; platforms xcb (the X server of the xorg package: tos-x), linuxfb, offscreen; with headers, qmake, moc, uic, rcc and CMake support to build Qt programs with gcc",
+ "file": "qt6-base-6.8.2-2.tpkg",
+ "size": 26043671,
+ "sha256": "e69f7d041aaf1d05a5a2b74509f4d340248cdd1147cfa463081350d344915ced",
+ "unpacked": 80903128,
+ "min_build": 618,
+ "depends": [
+  "xorg",
+  "xcb-libs",
+  "xcb-util",
+  "xkbcommon",
+  "fontconfig",
+  "fonts-dejavu",
+  "expat"
+ ],
+ "commands": {
+  "qmake": "bin/qmake",
+  "qmake6": "bin/qmake6",
+  "qtpaths6": "bin/qtpaths6",
+  "qt-cmake": "bin/qt-cmake",
+  "moc": "libexec/moc",
+  "uic": "libexec/uic",
+  "rcc": "libexec/rcc"
+ }
+}
